@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_view_user"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txt_view_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/img_view_user"
+        app:layout_constraintTop_toTopOf="@id/img_view_user"
+        app:layout_constraintEnd_toStartOf="@id/img_view_more"
+        tools:text="User A" />
+
+    <ImageView
+        android:id="@+id/img_view_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@id/txt_view_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_more_horiz_24"
+        app:tint="@color/ligthGray" />
+
+    <TextView
+        android:id="@+id/txt_view_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        tools:text="2 min"
+        android:textColor="@color/ligthGray"
+        app:layout_constraintBottom_toBottomOf="@id/img_view_user"
+        app:layout_constraintStart_toEndOf="@id/img_view_user" />
+
+    <ImageView
+        android:id="@+id/img_globe"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/txt_view_time"
+        app:layout_constraintBottom_toBottomOf="@id/txt_view_time"
+        app:layout_constraintTop_toTopOf="@id/txt_view_time"
+        app:srcCompat="@drawable/ic_baseline_language_24"
+        app:tint="@color/ligthGray" />
+
+    <TextView
+        android:id="@+id/txt_view_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:lineSpacingExtra="2dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_view_time"
+        app:layout_constraintStart_toStartOf="@id/img_view_user"
+        app:layout_constraintEnd_toEndOf="@id/img_view_more"
+        android:textColor="@color/black"
+        tools:text="As atividades são um dos elementos de criação fundamentais dos apps na plataforma Android. Elas servem como ponto de entrada para a interação de um usuário com um app e também são essenciais para a navegação do usuário em um app (como no botão Voltar) ou entre apps (como o botão Recentes)." />
+
+    <ImageView
+        android:id="@+id/img_view_post"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_view_content"
+        app:layout_constraintDimensionRatio="16:9"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <LinearLayout
+        android:id="@+id/post_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/img_view_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/ligtherGray"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_view_post_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            tools:text="GOOGLE.COM.BR" />
+
+        <TextView
+            android:id="@+id/txt_view_post_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            tools:text="abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/btn_comment"
+        app:layout_constraintTop_toBottomOf="@id/post_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ic_like"
+        android:text="@string/like"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ic_comentarios"
+        android:text="@string/comment"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@id/btn_share"
+        app:layout_constraintStart_toEndOf="@id/btn_like"
+        app:layout_constraintTop_toBottomOf="@id/post_container" />
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/post_container"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ic_compartilhar"
+        android:text="@string/share"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
