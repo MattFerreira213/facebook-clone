@@ -2,6 +2,8 @@ package com.afcompany.facebookclone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -51,11 +53,8 @@ public class MainActivity extends AppCompatActivity {
         post2.setImageViewUser(R.drawable.me);
         post2.setImageViewPost(R.drawable.ja);
         post2.setTextViewUsername("Mateus Ferreira");
-        post2.setTextViewContent("É oficial: Ja Morant foi eleito o melhor calouro da temporada da NBA. Ele foi declarado o vencedor nesta quinta-feira (3) e confirmou o favoritismo.\n" +
-                "\n" +
+        post2.setTextViewContent("É oficial: Ja Morant foi eleito o melhor calouro da temporada da NBA. Ele foi declarado o vencedor nesta quinta-feira (3) e confirmou o favoritismo.\n" + "\n" +
                 "O jogador do Memphis Grizzlies ficou com 99 votos para primeiro lugar, um para segundo e somou 498 pontos nos critérios gerais. Em segundo ficou Kendrick Nunn, do Miami Heat, com 56 menções como o segundo melhor. Zion Williamson, o grande nome do Draft passado, ficou em terceiro.");
-        post2.setTextViewTitle("www.theplayoffs.com.br".toUpperCase());
-        post2.setTextViewSubTitle("Rookie of The Year");
         post2.setTextViewTime("2 min");
 
         posts.add(post1);
@@ -95,6 +94,20 @@ public class MainActivity extends AppCompatActivity {
             textViewContent.setText(post.textViewContent);
             textViewTitle.setText(post.textViewTitle);
             textViewSubTitle.setText(post.textViewSubTitle);
+
+            if (post.getTextViewTitle() == null){
+                itemView.findViewById(R.id.post_container).setVisibility(View.GONE);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone((ConstraintLayout) itemView);
+                constraintSet.setDimensionRatio(R.id.img_view_post, "1:1");
+                constraintSet.applyTo((ConstraintLayout) itemView);
+            } else {
+                itemView.findViewById(R.id.post_container).setVisibility(View.VISIBLE);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone((ConstraintLayout) itemView);
+                constraintSet.setDimensionRatio(R.id.img_view_post, "16:9");
+                constraintSet.applyTo((ConstraintLayout) itemView);
+            }
         }
     }
 
