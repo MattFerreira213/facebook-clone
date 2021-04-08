@@ -57,7 +57,6 @@
                         android:paddingEnd="8dp"
                         app:srcCompat="@drawable/ic_msg"
                         />
-
                 </RelativeLayout>
             </Toolbar>
 
@@ -69,7 +68,6 @@
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:tabIndicatorHeight="0dp"
                 />
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
@@ -85,11 +83,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/white"
                 tools:listitem="@layout/feed_item" />
-
         </LinearLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 
 </RelativeLayout>
